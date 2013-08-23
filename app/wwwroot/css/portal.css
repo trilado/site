@@ -1,0 +1,62 @@
+.top {background: #F6F6F6}
+.logo {margin-top: 22px; margin-bottom: 20px;}
+.navbar .container {width: 940px}
+.navbar-inner {border-radius: 0; background: #E3E3E3; border: 0; border-top: 1px solid #FFF; box-shadow: none}
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle {background: none;}
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {background: none;  box-shadow: none; color: #0088CC}
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {background: none; color: #0088CC}
+
+.home .span3 {text-align: center; margin-top: 20px; position: relative}
+.home .span3 p {padding: 0 10px; font-size: 14px}
+.home .span3 .operation {position: absolute; right: -25px; top: 65px; font-size: 50px; color: #FFF;}
+.down {font-size: 30px; line-height: normal}
+.btn-download {font-size: 26px; padding: 12px 20px}
+
+h1 a, h2 a, h3 a, h4 a {color: #333333}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {color: #333333}
+
+h1 {font-size: 30px}
+h2 {font-size: 22px}
+h3 {font-size: 16px}
+h4 {font-size: 14px}
+h5 {font-size: 12px}
+
+.btn-controls {display: table; width: 100%; margin-top: 20px;}
+.btn-controls .left {float: left}
+.btn-controls .right {float: right}
+.btn-controls .pagination {margin: 0}
+.btn-controls .pagination a, .btn-controls .pagination span {line-height: 30px}
+textarea {min-height: 200px}
+.topic-view .row-fluid {padding-top: 10px; padding-bottom: 10px; border-top: 1px solid #DDDDDD}
+.topic-view .row-fluid:nth-child(2n+1) { background-color: #F9F9F9;}
+.topic-profile {padding: 5px; display: table}
+.topic-profile img {float:left; margin: 0 10px}
+.topic-profile-info {float: right}
+.topic-content {padding: 5px; padding-right: 20px}
+td.topic-date {width: 100px;}
+td.topic-author {width: 150px;}
+td.topic-replies {width: 90px;}
+
+.code {overflow-x: auto; background-color: #F5F5F5; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 4px 4px 4px 4px;}
+.code pre {background: none; border: none; margin: 0; box-shadow: 40px 0 0 #FBFBFC inset, 41px 0 0 #ECECF0 inset;}
+.code ol {margin: 0 0 0 33px; color: #BEBEC5;}
+.code ol li {padding-left: 12px;}
+
+.hero-unit
+{
+	background: #0074C1;
+	color: #FFF;
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 0;
+	margin-top: -20px;
+}
+.hero-unit p
+{
+	line-height: 25px;
+}
+
+.login 
+{
+	padding: 15px;
+	padding-bottom: 0;
+}
