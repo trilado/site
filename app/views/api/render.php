@@ -54,6 +54,9 @@
 					<hr />
 					<a name="method:<?= $m['name'] ?>"></a>
 					<h3 class="<?= $m['visibility'] . ' ' . $m['static'] ?>"><?= $m['name'] ?> <?= $m['final'] ? '<span class="label label-inverse">final</span>' : '' ?> <?= $m['abstratic'] ? '<span class="label label-warning">abstract</span>' : '' ?> <small>(na linha <a href="~/api/file/<?= $model['class']['name'] ?>#l<?= $m['line'] ?>"><?= $m['line'] ?></a>)</small></h3>
+					<?php if(isset($m['doc']['deprecated']['version'])): ?>
+					<div class="alert alert-error"><b>Obsoleto:</b> <?= $m['doc']['deprecated']['text'] ?></div>
+					<?php endif ?>
 					<p><?= $m['doc']['text'] ?></p>
 					<?php if (count($m['doc']['params'])): ?>
 						<h4>Parâmetros</h4>

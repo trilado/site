@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2011-2012, Valdirene da Cruz Neves Júnior <linkinsystem666@gmail.com>
+ * Copyright (c) Trilado Team (triladophp.org)
  * All rights reserved.
  */
 
@@ -8,8 +8,8 @@
 /**
  * Classe responsável por renderizar a página
  * 
- * @author	Valdirene da Cruz Neves Júnior <linkinsystem666@gmail.com>
- * @version	2.5
+ * @author		Valdirene da Cruz Neves Júnior <vaneves@vaneves.com>
+ * @version	2.7
  *
  */
 class Template
@@ -27,6 +27,18 @@ class Template
 	private $hook = array();
 	
 	/**
+	 * Guarda o nome do template master
+	 * @var	string	nome da template
+	 */
+	private $master;
+	
+	/**
+	 * Guarda o diretório raiz onde ficam as views
+	 * @var	string	diretório raiz
+	 */
+	private $directory;
+	
+	/**
 	 * Renderiza a página solicitada pelo usuário
 	 * @param	array	$args				argumentos requisitados pelo usuário, como controller, action e parâmetros
 	 * @throws	InvalidReturnException		Disparada caso a action solicitada retorne null
@@ -40,6 +52,7 @@ class Template
 		
 		$name = App::$controller;
 		$controller = new $name();
+		$controller->args = $args;
 		$registry->set('Controller', $controller);
 		$this->response = $controller->beforeRender();
 		
@@ -124,7 +137,38 @@ class Template
 		
 		define('master', $tpl);
 		define('MASTER', $tpl);
+		$this->master = $tpl;
+		
 		return $tpl;
+	}
+	
+	/**
+	 * Sobrescreve o template master
+	 * @param	string	$master		nome do template
+	 * @return	void
+	 */
+	public function setMaster($master)
+	{
+		$this->master = $master;
+	}
+	
+	/**
+	 * Sobrescreve o caminho do diretório onde ficam as views
+	 * @param	string	$path	caminho do diretório
+	 * @return	void
+	 */
+	public function setDirectory($path)
+	{
+		$this->directory = $path;
+	}
+	
+	/**
+	 * Retorna o caminho diretório definido para as view
+	 * @return	string	diretorna o caminho do diretório
+	 */
+	public function getDirectory()
+	{
+		return $this->directory;
 	}
 	
 	/**
@@ -163,7 +207,7 @@ class Template
 	 */
 	private function renderView($ob)
 	{
-		$html = Import::view($ob->Vars, '_master', MASTER);
+		$html = Import::view($ob->Vars, '_master', $this->master);
 		$html = $this->resolveUrl($html);
 
 		$content = Import::view($ob->Vars, $ob->Data['controller'], $ob->Data['view']);

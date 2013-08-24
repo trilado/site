@@ -80,6 +80,7 @@ class Api
 			$line = preg_replace('/^\s*\* ?/m', '', $line);
 			$line = preg_replace('/([\t]+)/', "\t", $line);
 
+			$match = array();
 			if (preg_match('/^@([a-zA-Z]+)\t(.*)$/', $line, $match))
 			{
 				$result[$match[1]]['text'] = $match[2];
@@ -102,13 +103,16 @@ class Api
 		$result['text'] = '';
 		$result['params'] = array();
 		$result['return'] = array();
+		$result['deprecated'] = array();
+		$result['see'] = array();
 
 		foreach ($lines as $line)
 		{
 			$line = preg_replace('/^\s*\* ?/m', '', $line);
 			$line = preg_replace('/([\t]+)/', "\t", $line);
 
-			if (preg_match('/^@([a-zA-Z]+)\t([a-zA-Z0-9_]+)(?:\t([^\t]*)(?:\t(.*))?)?$/', $line, $match))
+			$match = array();
+			if (preg_match('/^@([a-zA-Z]+)\t([a-zA-Z0-9_\.\:\(\)]+)(?:\t([^\t]*)(?:\t(.*))?)?$/', $line, $match))
 			{
 				if ($match[1] == 'param')
 				{
@@ -123,6 +127,15 @@ class Api
 				{
 					$result['return']['type'] = isset($match[2]) ? $match[2] : '';
 					$result['return']['text'] = isset($match[3]) ? $match[3] : '';
+				}
+				elseif ($match[1] == 'deprecated')
+				{
+					$result['deprecated']['version'] = isset($match[2]) ? $match[2] : '';
+					$result['deprecated']['text'] = isset($match[3]) ? $match[3] : '';
+				}
+				elseif ($match[1] == 'see')
+				{
+					$result['see'][] = isset($match[2]) ? $match[2] : '';
 				}
 			}
 			else
@@ -147,6 +160,7 @@ class Api
 			$line = preg_replace('/^\s*\* ?/m', '', $line);
 			$line = preg_replace('/([\t]+)/', "\t", $line);
 
+			$match = array();
 			if (preg_match('/^@([a-zA-Z]+)\t(.*)$/', $line, $match))
 			{
 				$result[$match[1]] = $match[2];
