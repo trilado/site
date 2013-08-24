@@ -3,6 +3,8 @@ class GuideController extends Controller
 {
 	public function render($version, $file = 'index', $sub = null)
 	{
+		if($sub)
+			$file .= '/' . $sub;
 		$file = dirname(ROOT) . '/guide/' . $version . '/' . rtrim($file, '/') . '.md';
 		$menu = dirname(ROOT) . '/guide/' . $version . '/menu.md';
 		
