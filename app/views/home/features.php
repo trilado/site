@@ -39,15 +39,19 @@
 	<div class="span3"><h4>Hook</h4><p>Em alguns casos quando se faz necessário alterar o modo de funcionamento do Trilado. Usando hook não é necessário modificar o código-fonte do Framework.</p></div>
 	<div class="span3"><h4>Erros Personalizados</h4><p>Basta criar uma view com o número do erro dentro do diretório reservado.</p></div>
 </div>
+<div class="row-fluid">
+	<div class="span3"><h4>Módulos</h4><p>Suporte a criação de módulos (HMVC).</p></div>
+	<div class="span3"><h4>Cache Automático</h4><p>Gerenciamento automático das consultados ao banco de dados atualizando o cache ao alterar um registro.</p></div>
+</div>
 
 <div class="page-header">
 <h2>Em Andamento</h2>
 </div>
 
 <div class="row-fluid">
-	<div class="span3"><h4>Módulos</h4><p>Suporte a criação de módulos (HMVC).</p></div>
 	<div class="span3"><h4>Gerador Código</h4><p>Gerador de código a parte do banco de dados e vice-versa.</p></div>
 	<div class="span3"><h4>Guia e API</h4><p>Criação automática de Guia e API da sua aplicação.</p></div>
+	<div class="span3"><h4>Minify</h4><p>Compactação automática de arquivos javascript e css.</p></div>
 </div>
 
 <div class="page-header">
@@ -55,5 +59,5 @@
 </div>
 
 <div class="row-fluid">
-	<div class="span3"><h4>Minify</h4><p>Compactação automática de arquivos javascript e css.</p></div>
+	<div class="span3"><h4>Skeleton Application</h4><p>Criação de uma aplicação esquelo na qual o Trilado será utilizado como módulo.</p></div>
 </div>

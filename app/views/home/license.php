@@ -4,7 +4,7 @@
 
 <p><b>O Trilado Framework é um software grátis. Ele está liberado sob a Licença New BSD.</b></p>
 
-<p>Copyright (c) 2009 - <?= date('Y') ?>, Valdirene da Cruz Neves Júnior<br />
+<p>Copyright (c) 2009 - <?= date('Y') ?>, Trilado Team<br />
 Todos os direitos reservados.</p>
 
 <p>Redistribution and use in source and binary forms, with or without modification,<br />
@@ -15,7 +15,7 @@ are permitted provided that the following conditions are met:</p>
 	<li>Redistributions in binary form must reproduce the above copyright notice,<br />
        this list of conditions and the following disclaimer in the documentation<br />
        and/or other materials provided with the distribution.</li>
-	<li>Neither the name of the Valdirene da Cruz Neves Júnior nor the names of its<br />
+	<li>Neither the name of the Trilado Team nor the names of its<br />
        contributors may be used to endorse or promote products derived from this<br />
        software without specific prior written permission.</li>
 </ol>
